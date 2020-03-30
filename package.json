@@ -5,8 +5,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "ramda": "^0.23.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.8",
+    "react-dom": "^16.8",
+    "react-pose": "^4.0.10",
     "react-redux": "^5.0.4",
     "react-router": "3.0.5",
     "react-router-redux": "^4.0.8",
