@@ -1,44 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {connect, Provider} from "react-redux";
-import {bindActionCreators, createStore} from "redux";
 import App from "./components/App";
-import {CHANGE_NAME, CHANGE_SECOND_NAME} from "./types/types";
-import {reducer} from "./reducers/reducers";
-
+import { Provider, connect } from "react-redux";
+import { bindActionCreators, createStore } from "redux";
+import { reducer } from "./reducers";
+import { changeName, changeSurname } from "./actions";
 
 const store = createStore(reducer);
 
-const changeName = name => {
-    return {
-        type: CHANGE_NAME,
-        payload: name
-    }
-}
-const changeSurname = surname => {
-    return {
-        type: CHANGE_SECOND_NAME,
-        payload: surname
-    }
-}
-
-
-
 const mapStateToProps = state => {
-    return {
-        name: state.name,
-        surname: state.surname
-    }
-}
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({
-        changeName: changeName,
-        changeSurname: changeSurname
-    }, dispatch);
+  return {
+    name: state.name,
+    secondName: state.secondName
+  };
+};
 
-const Wrapper = connect(mapStateToProps, mapDispatchToProps)(App)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      changeName,
+      changeSurname
+    },
+    dispatch
+  );
+
 const rootElement = document.getElementById("root");
+
+const WrapperMainComponent = connect(mapStateToProps, mapDispatchToProps)(App);
 ReactDOM.render(
-    <Provider store={store}><Wrapper /></Provider>,
+  <Provider store={store}>
+    <WrapperMainComponent />
+  </Provider>,
   rootElement
 );
