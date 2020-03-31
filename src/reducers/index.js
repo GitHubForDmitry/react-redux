@@ -1,11 +1,11 @@
-import {CHANGE_NAME, CHANGE_SURNAME} from "../types";
+import {CHANGE_AGE, CHANGE_NAME} from "../types";
 
 const initialState = {
-    name: '',
-    secondName: ''
+    name: "",
+    age: ""
 };
 
-export const reducer  = (state= initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_NAME: {
             return {
@@ -13,10 +13,10 @@ export const reducer  = (state= initialState, action) => {
                 name: action.payload
             }
         }
-        case CHANGE_SURNAME: {
-            return {
+        case CHANGE_AGE: {
+            return  {
                 ...state,
-                secondName: action.payload
+                age: action.payload
             }
         }
         default: return state;

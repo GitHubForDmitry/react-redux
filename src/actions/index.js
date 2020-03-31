@@ -1,15 +1,14 @@
-import {CHANGE_NAME, CHANGE_SURNAME} from "../types";
+import {CHANGE_AGE, CHANGE_NAME} from "../types";
 
-export const changeName = name => {
+export const changeName = (name) => {
     return {
         type: CHANGE_NAME,
         payload: name
     }
-};
-
-export const changeSurname = surname => {
+}
+export const changeAge = (age) => {
     return {
-        type: CHANGE_SURNAME,
-        payload: surname
+        type: CHANGE_AGE,
+        payload: age
     }
-};
+}

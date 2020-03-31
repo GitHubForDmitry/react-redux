@@ -1,12 +1,12 @@
 import React from 'react';
 
-function App({name, changeName, secondName, changeSurname}) {
+function App({name, age, changeName, changeAge}) {
     console.log(name);
-    console.log(secondName);
+    console.log(age);
     return (
         <div>
-            <input value={name} onChange={e => changeName(e.target.value)} type="text"/>
-            <input value={secondName} onChange={e => changeSurname(e.target.value)} type="text"/>
+            <input type="text" value={name} onChange={e => changeName(e.target.value)}/>
+            <input type="number" value={age} onChange={e => changeAge(e.target.value)}/>
         </div>
     );
 }
