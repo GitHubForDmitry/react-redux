@@ -1,2 +1,2 @@
-export const DEL = "DEL";
-export const ADD = "ADD";
+export const CHANGE_FIRST_NAME = "CHANGE_FIRST_NAME";
+export const CHANGE_SECOND_NAME = "CHANGE_SECOND_NAME";

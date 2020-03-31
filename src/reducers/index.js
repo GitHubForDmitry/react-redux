@@ -1,18 +1,24 @@
-import { ADD, DEL} from "../types";
+import {CHANGE_FIRST_NAME, CHANGE_SECOND_NAME} from "../types";
 
-export const reducers = (state, action) => {
+const initialState = {
+    name: "",
+    surname: ""
+}
+
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD:
-            return {
-            ...state,
-                amount: state.amount + action.value
-        }
-        case DEL: {
+        case CHANGE_FIRST_NAME: {
             return {
                 ...state,
-                amount: state.amount - action.value
+                name: action.payload
+            }
+        }
+        case CHANGE_SECOND_NAME: {
+            return {
+                ...state,
+                surname: action.payload
             }
         }
         default: return state;
     }
-}
+};
